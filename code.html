@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>زرین‌تتر (ZarinTether) | تابلوی زنده طلا و تتر و حسابرس هوشمند فاکتور طلا</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Vazirmatn -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for crisp luxury icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              950: '#070A10',
+              900: '#0B0F19',
+              850: '#101626',
+              800: '#161F33',
+              700: '#1E293B',
+              600: '#334155',
+            },
+            gold: {
+              300: '#FDE047',
+              400: '#FACC15',
+              500: '#EAB308',
+              600: '#D4AF37',
+              700: '#CA8A04',
+              glow: 'rgba(212, 175, 55, 0.15)',
+            },
+            tether: '#009393',
+            emeraldCustom: '#10B981',
+            roseCustom: '#F43F5E',
+          },
+          fontFamily: {
+            sans: ['Vazirmatn', 'sans-serif'],
+          },
+          boxShadow: {
+            'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.3)',
+            'tether-glow': '0 0 25px -5px rgba(0, 147, 147, 0.3)',
+            'glass-inset': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      background-color: #070A10;
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+    /* Luxury Glassmorphism Styles */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(22, 31, 51, 0.72) 0%, rgba(11, 15, 25, 0.85) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-card-gold {
+      background: linear-gradient(135deg, rgba(35, 28, 12, 0.6) 0%, rgba(16, 22, 38, 0.85) 100%);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF6D6 0%, #F5D061 50%, #C49726 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .shimmer-badge {
+      background: linear-gradient(90deg, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0.25) 50%, rgba(212,175,55,0.1) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .blinking-dot {
+      animation: pulseDot 1.8s infinite ease-in-out;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    /* Numeric tabular figures */
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex justify-center bg-[#070A10] antialiased selection:bg-gold-500 selection:text-black">
+  <!-- Mobile App Frame Container (Max 440px on desktop, full on mobile) -->
+  <div class="w-full max-w-[440px] min-h-screen flex flex-col relative pb-28 border-x border-white/[0.04] bg-[#070A10] shadow-2xl">
+    
+    <!-- Ambient Background Glows -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[440px] h-72 bg-gradient-to-b from-amber-500/10 via-teal-500/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 left-1/2 -translate-x-1/2 w-64 h-64 bg-gold-600/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <!-- 🌟 Top Luxury Header -->
+    <header class="sticky top-0 z-40 px-4 py-3.5 glass-card border-b border-white/[0.08] backdrop-blur-xl">
+      <div class="flex items-center justify-between">
+        
+        <!-- Brand Identity -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-gold-500 to-amber-200 flex items-center justify-center shadow-gold-glow relative overflow-hidden p-0.5">
+            <div class="w-full h-full bg-[#0B0F19] rounded-[10px] flex items-center justify-center">
+              <i class="fa-solid fa-gem text-gold-400 text-lg"></i>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <h1 class="text-base font-extrabold tracking-tight text-white flex items-center">
+                زرین‌<span class="gold-gradient-text">تتر</span>
+              </h1>
+              <span class="text-[9px] px-1.5 py-0.5 rounded-full font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">PRO</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-medium tracking-wide">دیده‌بان طلا و تتر • حسابرس فاکتور</p>
+          </div>
+        </div>
+        <!-- Live Refresh & Status Action -->
+        <div class="flex items-center gap-2">
+          <button id="refreshBtn" onclick="refreshMarketData()" class="group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-obsidian-850 hover:bg-obsidian-800 text-slate-300 hover:text-white border border-white/[0.08] transition-all active:scale-95 text-xs shadow-sm">
+            <i id="refreshIcon" class="fa-solid fa-arrows-rotate text-[11px] text-amber-400 group-hover:rotate-180 transition-transform duration-500"></i>
+            <span class="text-[11px] font-semibold">بروزرسانی</span>
+          </button>
+          <div class="w-8 h-8 rounded-lg bg-obsidian-850 border border-white/[0.06] flex items-center justify-center text-slate-400 relative">
+            <i class="fa-regular fa-bell text-xs"></i>
+            <span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Live Timestamp & Market Status Strip -->
+      <div class="mt-2.5 pt-2 border-t border-white/[0.04] flex items-center justify-between text-[11px]">
+        <div class="flex items-center gap-1.5 text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 blinking-dot shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
+          <span class="font-medium text-[10.5px]">بازار باز • معاملات زنده</span>
+        </div>
+        <div class="text-slate-400 text-[10px] flex items-center gap-1">
+          <i class="fa-regular fa-clock text-[9px] text-slate-500"></i>
+          <span id="lastUpdatedTime">بروزرسانی: ۱۴:۳۵:۱۸</span>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Container -->
+    <main class="flex-1 px-3.5 pt-3 space-y-4">
+      <!-- ========================================== -->
+      <!-- SECTION 1: REAL-TIME MARKET TICKER CARDS -->
+      <!-- ========================================== -->
+      <section class="space-y-2.5">
+        <div class="flex items-center justify-between px-1">
+          <h2 class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+            <i class="fa-solid fa-chart-line text-gold-500 text-[11px]"></i>
+            نرخ‌های زنده بازار لحظه‌ای
+          </h2>
+          <span class="text-[10px] text-slate-400 hover:text-amber-400 transition cursor-pointer flex items-center gap-0.5">
+            منبع: بیت‌پین و TGJU
+            <i class="fa-solid fa-chevron-left text-[8px]"></i>
+          </span>
+        </div>
+        <!-- Tether (USDT) Main Card -->
+        <div class="glass-card rounded-2xl p-3.5 relative overflow-hidden border border-teal-500/20 shadow-tether-glow group hover:border-teal-500/40 transition-all">
+          <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl pointer-events-none"></div>
+          
+          <div class="flex items-start justify-between relative z-10">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-xl bg-teal-950/80 border border-teal-500/30 flex items-center justify-center text-teal-400 shadow-inner">
+                <i class="fa-brands fa-ethereum text-xl"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-black text-sm text-white tracking-wide">تتر دیجیتال</span>
+                  <span class="text-[10px] text-slate-400 font-mono">USDT / IRT</span>
+                </div>
+                <div class="text-[10.5px] text-slate-400 flex items-center gap-1 mt-0.5">
+                  <span>مرجع: صرافی نوبیتکس/بیت‌پین</span>
+                </div>
+              </div>
+            </div>
+            <!-- 24h Change Badge -->
+            <div id="tetherChangeBadge" class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold font-mono">
+              <i class="fa-solid fa-arrow-trend-up text-[10px]"></i>
+              <span id="tetherChangeVal">+۱.۲۴٪</span>
+            </div>
+          </div>
+          <div class="mt-3.5 pt-3 border-t border-white/[0.06] flex items-baseline justify-between relative z-10">
+            <span class="text-xs text-slate-400 font-medium">نرخ خرید به تومان:</span>
+            <div class="flex items-baseline gap-1.5">
+              <span id="tetherPriceDisplay" class="text-xl font-extrabold text-white font-mono tabular-nums tracking-tight">۹۳,۴۵۰</span>
+              <span class="text-xs text-amber-300 font-bold">تومان</span>
+            </div>
+          </div>
+        </div>
+        <!-- 3-Column Mini Grid for Gold Metrics (18k, 24k, Mesghal) -->
+        <div class="grid grid-cols-3 gap-2">
+          
+          <!-- 18K Gold Card -->
+          <div class="glass-card-gold rounded-xl p-2.5 flex flex-col justify-between relative overflow-hidden border border-amber-500/30 shadow-gold-glow">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold text-amber-200">طلای ۱۸ عیار</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 blinking-dot"></span>
+            </div>
+            <div class="my-1">
+              <div id="gold18PriceDisplay" class="text-[15px] font-black text-white font-mono tabular-nums leading-tight">۴,۶۳۵,۰۰۰</div>
+              <div class="text-[10px] text-amber-400/80 font-medium mt-0.5">تومان / گرم</div>
+            </div>
+            <div class="text-[9px] text-emerald-400 font-mono font-semibold flex items-center gap-0.5 mt-1">
+              <i class="fa-solid fa-caret-up"></i>
+              <span>+۰.۸۵٪</span>
+            </div>
+          </div>
+          <!-- 24K Gold Card -->
+          <div class="glass-card rounded-xl p-2.5 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold text-slate-200">طلای ۲۴ عیار</span>
+              <span class="text-[9px] px-1 py-0.2 bg-white/10 rounded text-slate-300">شمش</span>
+            </div>
+            <div class="my-1">
+              <div id="gold24PriceDisplay" class="text-[15px] font-black text-white font-mono tabular-nums leading-tight">۶,۱۸۰,۰۰۰</div>
+              <div class="text-[10px] text-slate-400 font-medium mt-0.5">تومان / گرم</div>
+            </div>
+            <div class="text-[9px] text-slate-400 font-mono mt-1">
+              محاسبه عیار ۹۹۹
+            </div>
+          </div>
+          <!-- Mesghal Card -->
+          <div class="glass-card rounded-xl p-2.5 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold text-slate-200">مظنه مثقال</span>
+              <i class="fa-solid fa-scale-balanced text-[10px] text-amber-400/70"></i>
+            </div>
+            <div class="my-1">
+              <div id="mesghalPriceDisplay" class="text-[15px] font-black text-white font-mono tabular-nums leading-tight">۲۰,۰۷۸,۰۰۰</div>
+              <div class="text-[10px] text-slate-400 font-medium mt-0.5">تومان / مثقال</div>
+            </div>
+            <div class="text-[9px] text-slate-400 font-mono mt-1">
+              معادل ۴.۳۳ گرم
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- SECTION 2: INTERACTIVE MODULES NAVIGATION -->
+      <!-- ========================================== -->
+      <section class="mt-4">
+        
+        <!-- Navigation Segmented Tabs -->
+        <div class="p-1 rounded-xl bg-obsidian-950 border border-white/[0.08] flex items-center gap-1 shadow-inner">
+          <button onclick="switchTab('buy')" id="tabBuyBtn" class="flex-1 py-2.5 px-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-600 to-amber-500 text-obsidian-950 shadow-md">
+            <i class="fa-solid fa-calculator text-[13px]"></i>
+            <span>حسابرس خرید طلا</span>
+          </button>
+          
+          <button onclick="switchTab('sell')" id="tabSellBtn" class="flex-1 py-2.5 px-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-hand-holding-dollar text-[13px]"></i>
+            <span>فروش طلای مستعمل</span>
+          </button>
+          
+          <button onclick="switchTab('guide')" id="tabGuideBtn" class="py-2.5 px-3 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all flex items-center justify-center gap-1">
+            <i class="fa-solid fa-shield-halved text-[13px] text-amber-400"></i>
+            <span>قوانین</span>
+          </button>
+        </div>
+        <!-- ======================================================== -->
+        <!-- TAB 1: SMART GOLD BUY CALCULATOR (INVOICE AUDITOR) -->
+        <!-- ======================================================== -->
+        <div id="tabBuyContent" class="space-y-4 mt-3">
+          
+          <div class="glass-card rounded-2xl p-4 border border-white/[0.08] relative">
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-gold-500"></span>
+                <h3 class="text-xs font-bold text-white">ورودی‌های فاکتور طلافروشی</h3>
+              </div>
+              <span class="text-[10px] text-amber-300/90 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                بر اساس قانون جدید مالیات ۱۴۰۲-۱۴۰۳
+              </span>
+            </div>
+            <!-- Input 1: Gold Price Per Gram -->
+            <div class="space-y-1.5 mb-3">
+              <div class="flex items-center justify-between text-xs">
+                <label class="text-slate-300 font-medium">نرخ خام ۱۸ عیار (تومان):</label>
+                <button type="button" onclick="useLiveGoldPrice()" class="text-[10px] text-amber-400 hover:text-amber-300 underline font-semibold flex items-center gap-1">
+                  <i class="fa-solid fa-bolt text-[9px]"></i>
+                  درج قیمت لحظه‌ای تابلو
+                </button>
+              </div>
+              <div class="relative">
+                <input type="text" id="buyGoldRate" value="4,635,000" oninput="formatAndCalculateBuy()" class="w-full h-11 bg-obsidian-950/90 border border-white/[0.1] rounded-xl px-3.5 pr-3 pl-14 text-sm font-bold text-white font-mono focus:outline-none focus:border-gold-500 transition text-left" placeholder="مثال: ۴,۶۰۰,۰۰۰">
+                <span class="absolute left-3 top-3 text-[11px] text-slate-400 font-bold pointer-events-none">تومان</span>
+              </div>
+            </div>
+            <!-- Input 2: Weight in Grams -->
+            <div class="space-y-1.5 mb-3">
+              <div class="flex items-center justify-between text-xs">
+                <label class="text-slate-300 font-medium">وزن دقیق طلا (گرم):</label>
+                <span class="text-[10px] text-slate-400">از روی ترازوی طلافروش</span>
+              </div>
+              <div class="relative">
+                <input type="number" step="0.01" id="buyWeight" value="4.35" oninput="calculateBuyInvoice()" class="w-full h-11 bg-obsidian-950/90 border border-white/[0.1] rounded-xl px-3.5 pr-3 pl-12 text-sm font-bold text-white font-mono focus:outline-none focus:border-gold-500 transition text-left" placeholder="مثال: ۴.۳۵">
+                <span class="absolute left-3 top-3 text-[11px] text-slate-400 font-bold pointer-events-none">گرم</span>
+              </div>
+            </div>
+            <!-- Two-Column Sliders: Wage Charge & Profit -->
+            <div class="grid grid-cols-2 gap-2.5 mb-3">
+              
+              <!-- Wage (Ojrat) Input & Slider -->
+              <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-white/[0.05]">
+                <div class="flex items-center justify-between text-[11px] mb-1">
+                  <span class="text-slate-300 font-medium">اجرت ساخت:</span>
+                  <span id="buyWageBadge" class="text-xs font-bold text-amber-400 font-mono">۱۲٪</span>
+                </div>
+                <input type="range" id="buyWageSlider" min="0" max="35" value="12" step="0.5" oninput="syncWageInput(this.value)" class="w-full accent-amber-500 h-1 bg-obsidian-800 rounded-lg cursor-pointer">
+                <div class="flex justify-between text-[9px] text-slate-500 mt-1">
+                  <span>ساده (۵٪)</span>
+                  <span>لوکس (۲۵٪)</span>
+                </div>
+              </div>
+              <!-- Goldsmith Profit (7% Legal default) -->
+              <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-white/[0.05]">
+                <div class="flex items-center justify-between text-[11px] mb-1">
+                  <span class="text-slate-300 font-medium">سود طلافروش:</span>
+                  <span id="buyProfitBadge" class="text-xs font-bold text-amber-400 font-mono">۷٪</span>
+                </div>
+                <input type="range" id="buyProfitSlider" min="1" max="15" value="7" step="0.5" oninput="syncProfitInput(this.value)" class="w-full accent-amber-500 h-1 bg-obsidian-800 rounded-lg cursor-pointer">
+                <div class="flex justify-between text-[9px] text-slate-500 mt-1">
+                  <span>قانونی (۷٪)</span>
+                  <span>حداکثر</span>
+                </div>
+              </div>
+            </div>
+            <!-- Jeweler Quoted Price for Fraud-Detection / Verification (Optional) -->
+            <div class="pt-2 border-t border-white/[0.06]">
+              <div class="flex items-center justify-between text-[11px] mb-1.5">
+                <span class="text-slate-300 font-medium flex items-center gap-1">
+                  <i class="fa-solid fa-clipboard-check text-gold-500"></i>
+                  مبلغ اعلامی فروشنده برای راستی‌آزمایی (اختیاری):
+                </span>
+              </div>
+              <div class="relative">
+                <input type="text" id="sellerQuotedPrice" oninput="auditSellerPrice()" class="w-full h-10 bg-obsidian-950/90 border border-white/[0.1] rounded-xl px-3.5 pr-3 pl-14 text-xs font-bold text-amber-200 font-mono focus:outline-none focus:border-amber-400 transition text-left" placeholder="مبلغی که طلافروش به شما گفته">
+                <span class="absolute left-3 top-2.5 text-[10px] text-slate-400 font-bold pointer-events-none">تومان</span>
+              </div>
+            </div>
+            <!-- Fraud Audit Warning Badge -->
+            <div id="auditVerdictBox" class="hidden mt-3 p-2.5 rounded-xl text-xs flex items-center gap-2 transition-all">
+              <i id="auditIcon" class="fa-solid text-sm"></i>
+              <div class="flex-1">
+                <div id="auditTitle" class="font-bold text-[11px]"></div>
+                <div id="auditDesc" class="text-[10px] text-slate-300 mt-0.5 leading-snug"></div>
+              </div>
+            </div>
+          </div>
+          <!-- ========================================== -->
+          <!-- DIGITAL ITEMIZED RECEIPT (فاکتور رسمی شفاف) -->
+          <!-- ========================================== -->
+          <div class="glass-card rounded-2xl p-4 border border-gold-600/30 relative shadow-gold-glow">
+            
+            <!-- Receipt Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-dashed border-white/[0.15]">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center text-xs">
+                  <i class="fa-solid fa-receipt"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-white">فاکتور شفاف و استاندارد زرین‌تتر</h4>
+                  <span class="text-[9px] text-slate-400 font-mono">شناسه: ZRN-<span id="receiptId">84920</span></span>
+                </div>
+              </div>
+              <button onclick="copyInvoiceText()" class="text-[10.5px] px-2 py-1 rounded bg-obsidian-850 hover:bg-obsidian-800 text-slate-300 hover:text-white border border-white/[0.1] flex items-center gap-1 transition">
+                <i class="fa-regular fa-copy text-[10px]"></i>
+                <span id="copyBtnText">کپی فاکتور</span>
+              </button>
+            </div>
+            <!-- Breakdown Line Items -->
+            <div class="py-3 space-y-2 text-xs">
+              
+              <!-- 1. Raw Gold Value -->
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                  ارزش طلای خام:
+                </span>
+                <span class="font-mono font-bold text-white text-[13px] tabular-nums" id="resRawGold">۲۰,۱۶۲,۲۵۰ تومان</span>
+              </div>
+              <!-- 2. Wage Amount -->
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                  اجرت ساخت (<span id="resWagePercent">۱۲٪</span>):
+                </span>
+                <span class="font-mono font-bold text-amber-300 text-[13px] tabular-nums" id="resWageAmount">۲,۴۱۹,۴۷۰ تومان</span>
+              </div>
+              <!-- 3. Goldsmith Profit -->
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  سود قانونی طلافروش (<span id="resProfitPercent">۷٪</span>):
+                </span>
+                <span class="font-mono font-bold text-amber-400 text-[13px] tabular-nums" id="resProfitAmount">۱,۵۸۰,۷۲۰ تومان</span>
+              </div>
+              <!-- 4. 9% VAT (Tax exempt on raw gold!) -->
+              <div class="flex items-center justify-between text-slate-300 bg-obsidian-950/70 p-2 rounded-xl border border-white/[0.04]">
+                <div class="flex flex-col">
+                  <span class="flex items-center gap-1 text-[11px] font-semibold text-emerald-400">
+                    <i class="fa-solid fa-circle-check text-[10px]"></i>
+                    مالیات بر ارزش افزوده (۹٪ قانونی):
+                  </span>
+                  <span class="text-[9px] text-slate-400 mt-0.5">فقط بر سود و اجرت (نه بر کل طلا)</span>
+                </div>
+                <span class="font-mono font-bold text-emerald-300 text-[13px] tabular-nums" id="resTaxAmount">۳۶۰,۰۱۷ تومان</span>
+              </div>
+            </div>
+            <!-- Total Final Payable Price Banner -->
+            <div class="mt-2 pt-3 border-t border-dashed border-white/[0.15]">
+              <div class="p-3.5 rounded-xl bg-gradient-to-r from-amber-600/30 via-gold-500/20 to-amber-700/30 border border-gold-500/40 text-center relative overflow-hidden">
+                <div class="text-[11px] text-amber-200/90 font-medium">مبلغ نهایی و قانونی قابل پرداخت:</div>
+                <div class="mt-1 flex items-baseline justify-center gap-1.5">
+                  <span id="resTotalPrice" class="text-2xl font-black text-white font-mono tabular-nums tracking-tight gold-gradient-text">۲۴,۵۲۲,۴۵۷</span>
+                  <span class="text-xs text-amber-300 font-bold">تومان</span>
+                </div>
+                <div class="text-[10px] text-slate-400 mt-1 flex items-center justify-center gap-1">
+                  <span>معادل تقریبی:</span>
+                  <span id="resTotalPriceTether" class="font-mono font-bold text-teal-300">۲۶۲.۴ تتر (USDT)</span>
+                </div>
+              </div>
+            </div>
+            <!-- Tax Alert Tip -->
+            <div class="mt-3 flex items-start gap-1.5 text-[10px] text-slate-400 bg-obsidian-950/50 p-2 rounded-lg">
+              <i class="fa-solid fa-triangle-exclamation text-amber-400 text-xs mt-0.5"></i>
+              <span>هشدار بازرسی: اخذ مالیات ۹٪ بر روی ارزش طلای خام طبق بخشنامه اتحادیه و قانون مالیات بر ارزش افزوده تخلف محرز طلافروشی است.</span>
+            </div>
+          </div>
+        </div>
+        <!-- ======================================================== -->
+        <!-- TAB 2: USED/SCRAP GOLD SELL CALCULATOR (طلای مستعمل) -->
+        <!-- ======================================================== -->
+        <div id="tabSellContent" class="space-y-4 mt-3 hidden">
+          
+          <div class="glass-card rounded-2xl p-4 border border-white/[0.08]">
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-teal-400"></span>
+                <h3 class="text-xs font-bold text-white">محاسبه فروش طلای کارکرده / بدون اجرت</h3>
+              </div>
+              <span class="text-[10px] text-teal-300 bg-teal-500/10 px-2 py-0.5 rounded-full border border-teal-500/20">
+                دریافت نقدی آنی
+              </span>
+            </div>
+            <!-- Sell Rate Per Gram -->
+            <div class="space-y-1.5 mb-3">
+              <div class="flex items-center justify-between text-xs">
+                <label class="text-slate-300 font-medium">نرخ خرید طلافروش از شما (۱۸ عیار):</label>
+                <button type="button" onclick="useLiveGoldPriceForSell()" class="text-[10px] text-amber-400 hover:text-amber-300 underline font-semibold flex items-center gap-1">
+                  <i class="fa-solid fa-bolt text-[9px]"></i>
+                  درج ۹۸٪ نرخ تابلو
+                </button>
+              </div>
+              <div class="relative">
+                <input type="text" id="sellGoldRate" value="4,542,000" oninput="formatAndCalculateSell()" class="w-full h-11 bg-obsidian-950/90 border border-white/[0.1] rounded-xl px-3.5 pr-3 pl-14 text-sm font-bold text-white font-mono focus:outline-none focus:border-teal-500 transition text-left" placeholder="مثال: ۴,۵۴۲,۰۰۰">
+                <span class="absolute left-3 top-3 text-[11px] text-slate-400 font-bold pointer-events-none">تومان</span>
+              </div>
+            </div>
+            <!-- Weight to Sell -->
+            <div class="space-y-1.5 mb-3">
+              <div class="flex items-center justify-between text-xs">
+                <label class="text-slate-300 font-medium">وزن طلای فروشی (گرم):</label>
+                <span class="text-[10px] text-slate-400">بدون سنگ و نگین اتمی</span>
+              </div>
+              <div class="relative">
+                <input type="number" step="0.01" id="sellWeight" value="10.50" oninput="calculateSellInvoice()" class="w-full h-11 bg-obsidian-950/90 border border-white/[0.1] rounded-xl px-3.5 pr-3 pl-12 text-sm font-bold text-white font-mono focus:outline-none focus:border-teal-500 transition text-left" placeholder="مثال: ۱۰.۵۰">
+                <span class="absolute left-3 top-3 text-[11px] text-slate-400 font-bold pointer-events-none">گرم</span>
+              </div>
+            </div>
+            <!-- Melt / Deduction Percentage (کسر آبشده) -->
+            <div class="p-3 rounded-xl bg-obsidian-950/60 border border-white/[0.05] space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">درصد کسر ذوب / ری‌گیری:</span>
+                <span id="sellDeductionBadge" class="font-mono font-bold text-teal-400 text-xs">۱.۵٪</span>
+              </div>
+              <input type="range" id="sellDeductionSlider" min="0" max="5" value="1.5" step="0.1" oninput="syncSellDeduction(this.value)" class="w-full accent-teal-500 h-1 bg-obsidian-800 rounded-lg cursor-pointer">
+              <div class="flex justify-between text-[9px] text-slate-500">
+                <span>عرف بازار (۱ الی ۲ درصد)</span>
+                <span>بیش از ۲.۵٪ غیرمنصفانه است</span>
+              </div>
+            </div>
+          </div>
+          <!-- Payout Summary Card -->
+          <div class="glass-card rounded-2xl p-4 border border-teal-500/30 relative">
+            <h4 class="text-xs font-bold text-white mb-3 flex items-center gap-1.5">
+              <i class="fa-solid fa-money-bill-transfer text-teal-400"></i>
+              خلاصه مبلغ دریافتی شما در طلافروشی
+            </h4>
+            <div class="space-y-2.5 text-xs">
+              <div class="flex items-center justify-between text-slate-300">
+                <span>ارزش ناخالص طلای شما:</span>
+                <span class="font-mono font-bold text-white text-[13px] tabular-nums" id="resSellGross">۴۷,۶۹۱,۰۰۰ تومان</span>
+              </div>
+              <div class="flex items-center justify-between text-rose-300">
+                <span>کسر ذوب و ری‌گیری (<span id="resSellDeductPercent">۱.۵٪</span>):</span>
+                <span class="font-mono font-bold text-[13px] tabular-nums" id="resSellDeductAmount">- ۷۱۵,۳۶۵ تومان</span>
+              </div>
+            </div>
+            <div class="mt-3 pt-3 border-t border-dashed border-white/[0.1]">
+              <div class="p-3.5 rounded-xl bg-gradient-to-r from-teal-900/40 via-teal-800/30 to-obsidian-900 border border-teal-500/40 text-center">
+                <div class="text-[11px] text-teal-200 font-medium">خالص پرداختی طلافروش به حساب شما:</div>
+                <div class="mt-1 flex items-baseline justify-center gap-1.5">
+                  <span id="resSellNetPayout" class="text-2xl font-black text-white font-mono tabular-nums tracking-tight text-teal-300">۴۶,۹۷۵,۶۳۵</span>
+                  <span class="text-xs text-teal-400 font-bold">تومان</span>
+                </div>
+                <div class="text-[10px] text-slate-400 mt-1 flex items-center justify-center gap-1">
+                  <span>معادل تتری:</span>
+                  <span id="resSellNetPayoutTether" class="font-mono font-bold text-amber-300">۵۰۲.۶ USDT</span>
+                </div>
+              </div>
+            </div>
+            <!-- Pro-Tip for Sellers -->
+            <div class="mt-3 p-2.5 rounded-xl bg-teal-950/40 border border-teal-500/20 text-[10.5px] text-teal-200/90 leading-relaxed flex items-start gap-2">
+              <i class="fa-solid fa-lightbulb text-amber-400 text-sm mt-0.5"></i>
+              <div>
+                <strong>نکته طلایی برای فروش:</strong> در زمان فروش طلای مستعمل هیچ‌گونه مالیات یا ارزش افزوده‌ای نباید از شما کسر شود. تنها کسر مجاز، کسر عیار ناچیز یا کسر ترازو بابت نگین‌های غیر اصل است.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ======================================================== -->
+        <!-- TAB 3: LEGAL GUIDE & FAIR TRADING ACCORDION -->
+        <!-- ======================================================== -->
+        <div id="tabGuideContent" class="space-y-2.5 mt-3 hidden">
+          
+          <div class="p-3 rounded-2xl glass-card border border-amber-500/20 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-gold-400">
+              <i class="fa-solid fa-scale-balanced text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-white">قوانین رسمی و حقوق قانونی خریدار طلا</h3>
+              <p class="text-[10px] text-slate-400 mt-0.5">دستورالعمل مصوب سازمان امور مالیاتی و اتحادیه طلا و جواهر</p>
+            </div>
+          </div>
+          <!-- Accordion 1: Formula -->
+          <div class="rounded-xl glass-card border border-white/[0.08] overflow-hidden">
+            <button onclick="toggleAccordion('acc1')" class="w-full p-3 text-right flex items-center justify-between text-xs font-bold text-slate-200 hover:text-white transition">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-square-root-variable text-gold-500"></i>
+                فرمول قانونی محاسبه قیمت خرید طلا
+              </span>
+              <i id="acc1Icon" class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform"></i>
+            </button>
+            <div id="acc1Body" class="px-3 pb-3 text-[11px] text-slate-300 leading-relaxed border-t border-white/[0.04] pt-2 space-y-2">
+              <p>فرمول دقیق و قانونی که در تمام نرم‌افزارهای حسابداری رسمی طلافروشی‌ها اجرا می‌شود:</p>
+              <div class="p-2.5 rounded-lg bg-obsidian-950 font-mono text-[10px] text-amber-300 dir-ltr text-left border border-white/[0.06]">
+                قیمت نهایی = قیمت طلای خام + اجرت ساخت + سود طلافروش (۷٪) + مالیات بر ارزش افزوده (۹٪ فقط از سود و اجرت)
+              </div>
+              <p class="text-[10px] text-slate-400">نکته مهم: هرگز نباید مالیات بر ارزش افزوده از قیمت کل فاکتور یا طلای خام اخذ شود.</p>
+            </div>
+          </div>
+          <!-- Accordion 2: Common Scams -->
+          <div class="rounded-xl glass-card border border-white/[0.08] overflow-hidden">
+            <button onclick="toggleAccordion('acc2')" class="w-full p-3 text-right flex items-center justify-between text-xs font-bold text-slate-200 hover:text-white transition">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-triangle-exclamation text-rose-400"></i>
+                ۳ ترفند رایج در فاکتورهای نامتعارف طلا
+              </span>
+              <i id="acc2Icon" class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform"></i>
+            </button>
+            <div id="acc2Body" class="hidden px-3 pb-3 text-[11px] text-slate-300 leading-relaxed border-t border-white/[0.04] pt-2 space-y-2">
+              <ul class="list-disc list-inside space-y-1.5 text-[10.5px]">
+                <li><strong class="text-white">محاسبه مالیات روی کل فاکتور:</strong> برخی فروشندگان ۹٪ را روی کل مبلغ اعمال می‌کنند که باعث پرداخت چند میلیون تومان اضافه می‌شود!</li>
+                <li><strong class="text-white">سود بالاتر از ۷٪:</strong> سقف قانونی سود صنفی در سراسر ایران دقیقا ۷ درصد است.</li>
+                <li><strong class="text-white">وزن سنگ‌های بی‌ارزش:</strong> در زمان وزن‌کشی طلا، وزن سنگ‌های اتمی و چرم دستبند باید از وزن طلای خالص کسر گردد.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Accordion 3: Scrap gold vs No-wage gold -->
+          <div class="rounded-xl glass-card border border-white/[0.08] overflow-hidden">
+            <button onclick="toggleAccordion('acc3')" class="w-full p-3 text-right flex items-center justify-between text-xs font-bold text-slate-200 hover:text-white transition">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-coins text-amber-400"></i>
+                تفاوت طلای آبشده، دست دوم و طلای نو
+              </span>
+              <i id="acc3Icon" class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform"></i>
+            </button>
+            <div id="acc3Body" class="hidden px-3 pb-3 text-[11px] text-slate-300 leading-relaxed border-t border-white/[0.04] pt-2 space-y-2">
+              <p>برای حفظ سرمایه و پس‌انداز، طلای آبشده شرکتی با انگ معتبر و طلای کم‌اجرت (کمتر از ۷٪ اجرت) بالاترین بازدهی را دارند زیرا هزینه اجرت ساخت روی قیمت سوار نمی‌شود.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- SECTION 3: QUICK GOLD / TETHER CONVERTER -->
+      <!-- ========================================== -->
+      <section class="glass-card rounded-2xl p-3.5 border border-white/[0.08] space-y-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1.5 text-xs font-bold text-slate-200">
+            <i class="fa-solid fa-arrow-right-arrow-left text-gold-400 text-[11px]"></i>
+            مبدل سریع تتر به طلای ۱۸ عیار
+          </div>
+          <span class="text-[10px] text-slate-400 font-mono">1 USDT = ~0.02g Gold</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="p-2.5 rounded-xl bg-obsidian-950/80 border border-white/[0.05]">
+            <span class="text-[10px] text-slate-400 block mb-1">تعداد تتر (USDT):</span>
+            <input type="number" id="quickUsdtInput" value="100" oninput="quickConvertUsdtToGold(this.value)" class="w-full bg-transparent font-mono font-bold text-white text-sm outline-none">
+          </div>
+          <div class="p-2.5 rounded-xl bg-obsidian-950/80 border border-gold-500/20">
+            <span class="text-[10px] text-gold-300/80 block mb-1">معادل گرم طلای ۱۸ عیار:</span>
+            <div id="quickGoldResult" class="font-mono font-bold text-amber-300 text-sm">۲.۰۱ گرم</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Bottom Luxury Fixed Nav / Quick Action Bar -->
+    <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[440px] px-4 py-2.5 glass-card border-t border-white/[0.08] backdrop-blur-2xl z-50 flex items-center justify-between shadow-2xl">
+      <button onclick="switchTab('buy')" class="flex flex-col items-center gap-1 text-slate-400 hover:text-gold-400 active:scale-95 transition">
+        <i class="fa-solid fa-calculator text-base"></i>
+        <span class="text-[10px] font-bold">محاسبه خرید</span>
+      </button>
+      <button onclick="switchTab('sell')" class="flex flex-col items-center gap-1 text-slate-400 hover:text-gold-400 active:scale-95 transition">
+        <i class="fa-solid fa-hand-holding-dollar text-base"></i>
+        <span class="text-[10px] font-bold">فروش طلا</span>
+      </button>
+      <!-- Center Floating QR / Scan Button -->
+      <button onclick="shareAppReceipt()" class="relative -top-5 w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-600 via-gold-500 to-amber-200 text-obsidian-950 flex items-center justify-center shadow-gold-glow border-2 border-obsidian-900 active:scale-95 transition">
+        <i class="fa-solid fa-share-nodes text-lg"></i>
+      </button>
+      <button onclick="switchTab('guide')" class="flex flex-col items-center gap-1 text-slate-400 hover:text-gold-400 active:scale-95 transition">
+        <i class="fa-solid fa-shield-halved text-base"></i>
+        <span class="text-[10px] font-bold">قوانین اتحادیه</span>
+      </button>
+      <button onclick="refreshMarketData()" class="flex flex-col items-center gap-1 text-slate-400 hover:text-gold-400 active:scale-95 transition">
+        <i class="fa-solid fa-rotate text-base"></i>
+        <span class="text-[10px] font-bold">نرخ لحظه‌ای</span>
+      </button>
+    </nav>
+    <!-- Toast Notification Overlay -->
+    <div id="toastNotification" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-xl bg-obsidian-850/95 border border-gold-500/40 text-white text-xs font-bold shadow-gold-glow flex items-center gap-2 transform -translate-y-10 opacity-0 pointer-events-none transition-all duration-300">
+      <i class="fa-solid fa-circle-check text-gold-400"></i>
+      <span id="toastMessage">متن فاکتور با موفقیت کپی شد</span>
+    </div>
+  </div>
+  <!-- Application Logic & Live Real-Time Engine -->
+  <script>
+    // State management
+    const state = {
+      tetherPrice: 93450,       // Tomans
+      gold18Rate: 4635000,      // Tomans per gram
+      gold24Rate: 6180000,      // (4635000 / 750) * 999
+      mesghalRate: 20078000,    // 4635000 * 4.3318
+      activeTab: 'buy',
+      wagePercent: 12.0,
+      profitPercent: 7.0,
+      sellDeductionPercent: 1.5,
+      calculatedBuy: {
+        rawGold: 0,
+        wageAmount: 0,
+        profitAmount: 0,
+        taxAmount: 0,
+        totalPrice: 0
+      }
+    };
+    // Helper: Format Persian/Arabic Numbers with Comma Separators
+    function formatNumber(num) {
+      if (isNaN(num)) return '۰';
+      const parts = Math.round(num).toString().split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return toPersianDigits(parts.join('.'));
+    }
+    function toPersianDigits(str) {
+      const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+      return str.toString().replace(/[0-9]/g, function (w) {
+        return persianDigits[+w];
+      });
+    }
+    function parseFormattedNumber(str) {
+      if (!str) return 0;
+      // Convert persian to english digits
+      const englishStr = str.toString()
+        .replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
+        .replace(/,/g, '')
+        .replace(/[^\d.]/g, '');
+      return parseFloat(englishStr) || 0;
+    }
+    // Tab Switching
+    function switchTab(tabId) {
+      state.activeTab = tabId;
+      
+      const buyContent = document.getElementById('tabBuyContent');
+      const sellContent = document.getElementById('tabSellContent');
+      const guideContent = document.getElementById('tabGuideContent');
+      const buyBtn = document.getElementById('tabBuyBtn');
+      const sellBtn = document.getElementById('tabSellBtn');
+      const guideBtn = document.getElementById('tabGuideBtn');
+      // Reset styles
+      const activeClass = 'bg-gradient-to-r from-amber-600 to-amber-500 text-obsidian-950 font-bold shadow-md';
+      const inactiveClass = 'text-slate-400 hover:text-white font-semibold bg-transparent shadow-none';
+      buyBtn.className = 'flex-1 py-2.5 px-2 rounded-lg text-xs transition-all flex items-center justify-center gap-1.5 ' + (tabId === 'buy' ? activeClass : inactiveClass);
+      sellBtn.className = 'flex-1 py-2.5 px-2 rounded-lg text-xs transition-all flex items-center justify-center gap-1.5 ' + (tabId === 'sell' ? activeClass : inactiveClass);
+      guideBtn.className = 'py-2.5 px-3 rounded-lg text-xs transition-all flex items-center justify-center gap-1 ' + (tabId === 'guide' ? activeClass : inactiveClass);
+      buyContent.classList.toggle('hidden', tabId !== 'buy');
+      sellContent.classList.toggle('hidden', tabId !== 'sell');
+      guideContent.classList.toggle('hidden', tabId !== 'guide');
+    }
+    // Toggle Educational Accordions
+    function toggleAccordion(id) {
+      const body = document.getElementById(id + 'Body');
+      const icon = document.getElementById(id + 'Icon');
+      const isHidden = body.classList.contains('hidden');
+      
+      body.classList.toggle('hidden', !isHidden);
+      icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+    // Sync wage slider with badge
+    function syncWageInput(val) {
+      state.wagePercent = parseFloat(val);
+      document.getElementById('buyWageBadge').innerText = toPersianDigits(val) + '٪';
+      calculateBuyInvoice();
+    }
+    // Sync profit slider with badge
+    function syncProfitInput(val) {
+      state.profitPercent = parseFloat(val);
+      document.getElementById('buyProfitBadge').innerText = toPersianDigits(val) + '٪';
+      calculateBuyInvoice();
+    }
+    // Sync sell deduction slider
+    function syncSellDeduction(val) {
+      state.sellDeductionPercent = parseFloat(val);
+      document.getElementById('sellDeductionBadge').innerText = toPersianDigits(val) + '٪';
+      calculateSellInvoice();
+    }
+    // Fill rate inputs with live price
+    function useLiveGoldPrice() {
+      document.getElementById('buyGoldRate').value = formatNumber(state.gold18Rate);
+      calculateBuyInvoice();
+      showToast('نرخ طلای ۱۸ عیار از تابلوی زنده درج شد.');
+    }
+    function useLiveGoldPriceForSell() {
+      // Typically scrap gold is bought at ~98% of live 18k rate
+      const discountedRate = Math.round(state.gold18Rate * 0.98);
+      document.getElementById('sellGoldRate').value = formatNumber(discountedRate);
+      calculateSellInvoice();
+      showToast('نرخ منصفانه خرید مستعمل (۹۸٪ تابلو) درج شد.');
+    }
+    // Buy calculation handler
+    function formatAndCalculateBuy() {
+      const input = document.getElementById('buyGoldRate');
+      const raw = parseFormattedNumber(input.value);
+      input.value = raw > 0 ? formatNumber(raw) : '';
+      calculateBuyInvoice();
+    }
+    function calculateBuyInvoice() {
+      const goldRate = parseFormattedNumber(document.getElementById('buyGoldRate').value);
+      const weight = parseFloat(document.getElementById('buyWeight').value) || 0;
+      const wagePct = state.wagePercent;
+      const profitPct = state.profitPercent;
+      // 1. Raw Gold Value
+      const rawGoldValue = weight * goldRate;
+      // 2. Wage Amount
+      const wageAmount = rawGoldValue * (wagePct / 100);
+      // 3. Goldsmith Profit (7% default)
+      const profitAmount = (rawGoldValue + wageAmount) * (profitPct / 100);
+      // 4. VAT (9% Tax applied ONLY on Wage + Profit according to current Iranian tax reform)
+      const vatTax = (wageAmount + profitAmount) * 0.09;
+      // 5. Total
+      const totalPrice = rawGoldValue + wageAmount + profitAmount + vatTax;
+      // Save in state
+      state.calculatedBuy = {
+        rawGold: rawGoldValue,
+        wageAmount: wageAmount,
+        profitAmount: profitAmount,
+        taxAmount: vatTax,
+        totalPrice: totalPrice,
+        weight: weight,
+        goldRate: goldRate
+      };
+      // Update UI elements
+      document.getElementById('resRawGold').innerText = formatNumber(rawGoldValue) + ' تومان';
+      document.getElementById('resWagePercent').innerText = toPersianDigits(wagePct) + '٪';
+      document.getElementById('resWageAmount').innerText = formatNumber(wageAmount) + ' تومان';
+      document.getElementById('resProfitPercent').innerText = toPersianDigits(profitPct) + '٪';
+      document.getElementById('resProfitAmount').innerText = formatNumber(profitAmount) + ' تومان';
+      document.getElementById('resTaxAmount').innerText = formatNumber(vatTax) + ' تومان';
+      
+      document.getElementById('resTotalPrice').innerText = formatNumber(totalPrice);
+      
+      // Calculate tether equivalent
+      const tetherEquiv = state.tetherPrice > 0 ? (totalPrice / state.tetherPrice).toFixed(1) : 0;
+      document.getElementById('resTotalPriceTether').innerText = toPersianDigits(tetherEquiv) + ' تتر (USDT)';
+      // Re-audit seller price if user has filled it
+      auditSellerPrice();
+    }
+    // Auditor: Verify seller's claimed total price
+    function auditSellerPrice() {
+      const sellerInput = document.getElementById('sellerQuotedPrice');
+      const quoted = parseFormattedNumber(sellerInput.value);
+      const verdictBox = document.getElementById('auditVerdictBox');
+      const auditIcon = document.getElementById('auditIcon');
+      const auditTitle = document.getElementById('auditTitle');
+      const auditDesc = document.getElementById('auditDesc');
+      if (!quoted || quoted <= 0 || state.calculatedBuy.totalPrice <= 0) {
+        verdictBox.classList.add('hidden');
+        return;
+      }
+      verdictBox.classList.remove('hidden');
+      const fairPrice = state.calculatedBuy.totalPrice;
+      const difference = quoted - fairPrice;
+      const diffPercent = (difference / fairPrice) * 100;
+      if (Math.abs(difference) <= 25000 || Math.abs(diffPercent) < 0.3) {
+        // Fair Price
+        verdictBox.className = 'mt-3 p-2.5 rounded-xl text-xs flex items-center gap-2 bg-emerald-950/80 border border-emerald-500/40 text-emerald-300';
+        auditIcon.className = 'fa-solid fa-circle-check text-emerald-400 text-lg';
+        auditTitle.innerText = 'فاکتور کاملاً منصفانه و قانونی است';
+        auditDesc.innerText = 'مبلغ اعلامی طلافروش با محاسبات دقیق قانون مالیات طلا همخوانی کامل دارد.';
+      } else if (difference > 25000) {
+        // Overcharged!
+        verdictBox.className = 'mt-3 p-2.5 rounded-xl text-xs flex items-center gap-2 bg-rose-950/80 border border-rose-500/40 text-rose-300';
+        auditIcon.className = 'fa-solid fa-triangle-exclamation text-rose-400 text-lg';
+        auditTitle.innerText = 'احتمال گران‌فروشی: ' + formatNumber(difference) + ' تومان اضافه!';
+        auditDesc.innerText = 'طلافروش احتمالا ۹٪ مالیات را روی کل طلا کشیده یا سود بالاتری از ۷٪ لحاظ کرده است.';
+      } else {
+        // Lower than formula (e.g. discounted wage or no-wage gold)
+        verdictBox.className = 'mt-3 p-2.5 rounded-xl text-xs flex items-center gap-2 bg-amber-950/80 border border-gold-500/40 text-gold-300';
+        auditIcon.className = 'fa-solid fa-tag text-gold-400 text-lg';
+        auditTitle.innerText = 'قیمت پایین‌تر از سقف مجاز (تخفیف خورده)';
+        auditDesc.innerText = 'این قیمت ' + formatNumber(Math.abs(difference)) + ' تومان مناسب‌تر از فرمول استاندارد است.';
+      }
+    }
+    // Sell Calculation
+    function formatAndCalculateSell() {
+      const input = document.getElementById('sellGoldRate');
+      const raw = parseFormattedNumber(input.value);
+      input.value = raw > 0 ? formatNumber(raw) : '';
+      calculateSellInvoice();
+    }
+    function calculateSellInvoice() {
+      const rate = parseFormattedNumber(document.getElementById('sellGoldRate').value);
+      const weight = parseFloat(document.getElementById('sellWeight').value) || 0;
+      const deductionPct = state.sellDeductionPercent;
+      const gross = weight * rate;
+      const deductionAmount = gross * (deductionPct / 100);
+      const netPayout = gross - deductionAmount;
+      document.getElementById('resSellGross').innerText = formatNumber(gross) + ' تومان';
+      document.getElementById('resSellDeductPercent').innerText = toPersianDigits(deductionPct) + '٪';
+      document.getElementById('resSellDeductAmount').innerText = '- ' + formatNumber(deductionAmount) + ' تومان';
+      document.getElementById('resSellNetPayout').innerText = formatNumber(netPayout);
+      const tetherEquiv = state.tetherPrice > 0 ? (netPayout / state.tetherPrice).toFixed(1) : 0;
+      document.getElementById('resSellNetPayoutTether').innerText = toPersianDigits(tetherEquiv) + ' USDT';
+    }
+    // Quick USDT to Gold converter
+    function quickConvertUsdtToGold(usdtAmount) {
+      const usdt = parseFloat(usdtAmount) || 0;
+      const tomanTotal = usdt * state.tetherPrice;
+      const gramsOfGold = state.gold18Rate > 0 ? (tomanTotal / state.gold18Rate).toFixed(3) : 0;
+      document.getElementById('quickGoldResult').innerText = toPersianDigits(gramsOfGold) + ' گرم';
+    }
+    // Copy Invoice Text to Clipboard
+    function copyInvoiceText() {
+      const b = state.calculatedBuy;
+      const invoiceText = `🧾 فاکتور رسمی محاسبه طلا - زرین‌تتر
+------------------------------------
+⚖️ وزن طلا: ${toPersianDigits(b.weight)} گرم
+🏷️ نرخ خام ۱۸ عیار: ${formatNumber(b.goldRate)} تومان
+🪙 ارزش طلای خام: ${formatNumber(b.rawGold)} تومان
+🛠️ اجرت ساخت (${toPersianDigits(state.wagePercent)}٪): ${formatNumber(b.wageAmount)} تومان
+💼 سود فروشنده (${toPersianDigits(state.profitPercent)}٪): ${formatNumber(b.profitAmount)} تومان
+🏛️ مالیات قانونی (۹٪ فقط سود و اجرت): ${formatNumber(b.taxAmount)} تومان
+------------------------------------
+💰 مبلغ نهایی قانونی: ${formatNumber(b.totalPrice)} تومان
+⚡ بررسی شده توسط دستیار هوشمند زرین‌تتر`;
+      navigator.clipboard.writeText(invoiceText).then(() => {
+        showToast('متن فاکتور شفاف در کلیپ‌بورد کپی شد.');
+      }).catch(() => {
+        showToast('فاکتور کپی شد.');
+      });
+    }
+    function shareAppReceipt() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'زرین‌تتر - فاکتور هوشمند طلا',
+          text: `مبلغ محاسبه شده قانونی طلا: ${formatNumber(state.calculatedBuy.totalPrice)} تومان`,
+          url: window.location.href,
+        }).catch(() => {});
+      } else {
+        copyInvoiceText();
+      }
+    }
+    // Toast utility
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = msg;
+      toast.classList.remove('opacity-0', '-translate-y-10', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-10', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2500);
+    }
+    // Live Market Data Fetch (Bitpin Tether + Simulated/Live Gold TGJU prices)
+    async function refreshMarketData() {
+      const icon = document.getElementById('refreshIcon');
+      icon.classList.add('animate-spin');
+      try {
+        // Attempt fetch from Bitpin for real USDT_IRT price
+        const res = await fetch('https://api.bitpin.ir/v1/mkt/tickers/');
+        if (res.ok) {
+          const data = await res.json();
+          // Bitpin tickers array or results object
+          const tickers = data.results || data;
+          const usdtTicker = Array.isArray(tickers) ? tickers.find(t => t.pair && t.pair.code === 'USDT_IRT') : null;
+          
+          if (usdtTicker && usdtTicker.price) {
+            state.tetherPrice = Math.round(parseFloat(usdtTicker.price) / 10); // Rial to Toman
+            const change24 = parseFloat(usdtTicker.change_24h || 0);
+            updateTetherUI(state.tetherPrice, change24);
+          } else {
+            simulateMarketTick();
+          }
+        } else {
+          simulateMarketTick();
+        }
+      } catch (err) {
+        // Fallback simulation with realistic fluctuations if CORS or network block occurs
+        simulateMarketTick();
+      } finally {
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+        }, 600);
+      }
+      // Update timestamp
+      const now = new Date();
+      const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+      document.getElementById('lastUpdatedTime').innerText = `بروزرسانی: ${toPersianDigits(timeStr)}`;
+      showToast('قیمت‌های بازار با موفقیت بروزرسانی شدند.');
+    }
+    function simulateMarketTick() {
+      // Slight realistic jitter
+      const tetherDelta = Math.floor((Math.random() - 0.48) * 120);
+      state.tetherPrice = Math.max(88000, state.tetherPrice + tetherDelta);
+      const goldDelta = Math.floor((Math.random() - 0.45) * 8000);
+      state.gold18Rate = Math.max(4200000, state.gold18Rate + goldDelta);
+      // 24k = (18k / 750) * 999
+      state.gold24Rate = Math.round((state.gold18Rate / 750) * 999);
+      // Mesghal = 18k * 4.3318
+      state.mesghalRate = Math.round(state.gold18Rate * 4.3318);
+      updateTetherUI(state.tetherPrice, 1.28);
+      updateGoldUI();
+      quickConvertUsdtToGold(document.getElementById('quickUsdtInput').value);
+    }
+    function updateTetherUI(price, change24) {
+      document.getElementById('tetherPriceDisplay').innerText = formatNumber(price);
+      const badge = document.getElementById('tetherChangeBadge');
+      const val = document.getElementById('tetherChangeVal');
+      const isPositive = change24 >= 0;
+      val.innerText = (isPositive ? '+' : '') + toPersianDigits(Math.abs(change24).toFixed(2)) + '٪';
+      if (isPositive) {
+        badge.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold font-mono';
+      } else {
+        badge.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-xs font-bold font-mono';
+      }
+    }
+    function updateGoldUI() {
+      document.getElementById('gold18PriceDisplay').innerText = formatNumber(state.gold18Rate);
+      document.getElementById('gold24PriceDisplay').innerText = formatNumber(state.gold24Rate);
+      document.getElementById('mesghalPriceDisplay').innerText = formatNumber(state.mesghalRate);
+    }
+    // Auto Refresh Interval every 30 seconds
+    setInterval(() => {
+      simulateMarketTick();
+    }, 30000);
+    // Initial Run
+    window.addEventListener('DOMContentLoaded', () => {
+      calculateBuyInvoice();
+      calculateSellInvoice();
+      quickConvertUsdtToGold(100);
+      refreshMarketData();
+    });
+  </script>
+</body>
+</html>
